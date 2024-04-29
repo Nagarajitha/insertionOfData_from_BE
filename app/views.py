@@ -78,4 +78,18 @@ def insert_access(request):
         
     else:
         return HttpResponse('Given webpage is not present in the database')
+    
+
+
+def display_topics(request):
+        QLTO = Topic.objects.all()
+        d = {'QLTO':QLTO}
+
+        return render(request,'display_topics.html',d)
+    
+def display_webpages(request):
+
+    QLWO=Webpage.objects.all()
+    d={'QLWO':QLWO}
+    return render(request,'display_webpages.html',d)
 

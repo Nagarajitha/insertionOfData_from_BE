@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-@s4%ej&xyid-(0+^cl5^hpx8(=d&_r%)=r5b=(@vbx*@3v_6us
 DEBUG = True
 
 ALLOWED_HOSTS = []
+import os
+
+TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 
 
 # Application definition
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'insertion_of_data_from_BE_get_filter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
